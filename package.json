@@ -1,0 +1,36 @@
+{
+  "name": "wappler-resend",
+  "version": "0.0.0-semantic-release",
+  "description": "Wappler Resend Extension",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "node scripts/copyFiles.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tbvgl/wappler-resend.git"
+  },
+  "keywords": [
+    "wappler-extension",
+    "server-connect",
+    "resend"
+  ],
+  "author": "Tobias Vogel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tbvgl/wappler-resend/issues"
+  },
+  "homepage": "https://github.com/tbvgl/wappler-resend#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^18.4.4",
+    "@commitlint/config-conventional": "^18.4.4",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/gitlab": "^13.0.2",
+    "husky": "^8.0.3",
+    "semantic-release": "^23.0.0"
+  },
+  "dependencies": {
+    "wappler-advanced-logger": "^1.2.0"
+  }
+}
