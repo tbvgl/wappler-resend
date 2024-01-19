@@ -1,0 +1,203 @@
+[
+  {
+    "type": "resend_send_email",
+    "module": "resend",
+    "action": "send_resend_email",
+    "groupTitle": "Resend Email",
+    "groupIcon": "fas fa-envelope comp-exec",
+    "title": "Send Resend Email @@var(actionName)@@",
+    "icon": "fad fa-paper-plane comp-exec",
+    "dataPickObject": true,
+    "dataScheme": [
+      {
+        "name": "id",
+        "type": "text"
+      },
+      {
+        "name": "error",
+        "type": "text"
+      }
+    ],
+    "properties": [
+      {
+        "group": "Step properties",
+        "variables": [
+          {
+            "name": "actionName",
+            "optionName": "name",
+            "baseName": "sendHtmlEmail",
+            "title": "Name",
+            "type": "text",
+            "required": true,
+            "defaultValue": ""
+          },
+          {
+            "name": "output",
+            "optionName": "output",
+            "title": "Output",
+            "type": "boolean",
+            "defaultValue": false
+          }
+        ]
+      },
+      {
+        "group": "Email Details",
+        "variables": [
+          {
+            "name": "fromName",
+            "optionName": "fromName",
+            "title": "From Name",
+            "type": "text",
+            "required": false,
+            "defaultValue": "",
+            "serverDataBindings": true,
+            "help": "Optional: Add the name of the sender. It will be formatted like 'Name <email@address.com>'."
+          },
+          {
+            "name": "from",
+            "optionName": "from",
+            "title": "From",
+            "type": "text",
+            "required": true,
+            "defaultValue": "",
+            "serverDataBindings": true,
+            "help": "Defaults to the ENV variable EMAIL_FROM if empty"
+          },
+          {
+            "name": "to",
+            "optionName": "to",
+            "title": "To",
+            "type": "text",
+            "required": true,
+            "defaultValue": "",
+            "serverDataBindings": true
+          },
+          {
+            "name": "cc",
+            "optionName": "cc",
+            "title": "Cc",
+            "type": "text",
+            "required": false,
+            "defaultValue": "",
+            "serverDataBindings": true,
+            "help": "Optional: Add Cc recipient email address. For multiple addresses, separate them by commas."
+          },
+          {
+            "name": "bcc",
+            "optionName": "bcc",
+            "title": "Bcc",
+            "type": "text",
+            "required": false,
+            "defaultValue": "",
+            "serverDataBindings": true,
+            "help": "Optional: Add Bcc recipient email address. For multiple addresses, separate them by commas."
+          },
+          {
+            "name": "reply_to",
+            "optionName": "reply_to",
+            "title": "Reply-To",
+            "type": "text",
+            "required": false,
+            "defaultValue": "",
+            "serverDataBindings": true,
+            "help": "Optional: Add a reply-to email address. Defaults to the 'From' email if not defined."
+          },
+          {
+            "name": "subject",
+            "optionName": "subject",
+            "title": "Subject",
+            "type": "text",
+            "required": true,
+            "defaultValue": "",
+            "serverDataBindings": true
+          },
+          {
+            "name": "preheader",
+            "optionName": "preheader",
+            "title": "Preheader",
+            "type": "text",
+            "required": false,
+            "defaultValue": "",
+            "serverDataBindings": true,
+            "help": "Optional: Add a preheader text that will be inserted before the HTML content."
+          },
+          {
+            "name": "html",
+            "optionName": "html",
+            "title": "HTML Content",
+            "type": "textarea",
+            "required": true,
+            "defaultValue": "",
+            "serverDataBindings": true
+          },
+          {
+            "name": "text",
+            "optionName": "text",
+            "title": "Plain Text",
+            "type": "textarea",
+            "required": false,
+            "defaultValue": "",
+            "serverDataBindings": true,
+            "help": "Optional: Add the plain text version of the message."
+          },
+          {
+            "name": "attachments",
+            "optionName": "attachments",
+            "title": "Attachments",
+            "type": "grid",
+            "defaultValue": {},
+            "serverDataBindings": true,
+            "columns": [
+              {
+                "field": "filename",
+                "caption": "Filename",
+                "size": "40%",
+                "editable": {
+                  "type": "datapicker"
+                }
+              },
+              {
+                "field": "path",
+                "caption": "File Path",
+                "size": "60%",
+                "editable": {
+                  "type": "datapicker"
+                },
+                "help": "The path to the attachment. If set, 'filename' is required."
+              }
+            ]
+          },
+          {
+            "name": "tags",
+            "optionName": "tags",
+            "title": "Tags",
+            "type": "grid",
+            "defaultValue": {},
+            "serverDataBindings": true,
+            "columns": [
+              {
+                "field": "name",
+                "caption": "Name",
+                "size": "50%",
+                "editable": {
+                  "type": "text"
+                },
+                "help": "The name of the email tag."
+              },
+              {
+                "field": "value",
+                "caption": "Value",
+                "size": "50%",
+                "editable": {
+                  "type": "text"
+                },
+                "help": "The value of the email tag."
+              }
+            ],
+            "help": "Optional: Add tags for the email. Each tag requires a name and a value."
+          }
+        ]
+      }
+    ]
+  }
+]
