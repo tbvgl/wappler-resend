@@ -65,7 +65,7 @@ exports.send_resend_email = async function (options) {
       "string",
       "HTML content is required."
     ),
-    replyTo: replyTo,
+    reply_to: replyTo,
     cc: ccRecipients.length > 0 ? ccRecipients : undefined,
     bcc: bccRecipients.length > 0 ? bccRecipients : undefined,
     text: options.text,
