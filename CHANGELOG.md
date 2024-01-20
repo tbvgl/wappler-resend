@@ -1,3 +1,10 @@
+## [1.0.1-release.2](https://github.com/tbvgl/wappler-resend/compare/v1.0.1-release.1...v1.0.1-release.2) (2024-01-20)
+
+
+### Bug Fixes
+
+* resend sdk is missing from dependencies ([7a45b1d](https://github.com/tbvgl/wappler-resend/commit/7a45b1d5b425c282368a20c28f4800ceebbb6cb7))
+
 ## [1.0.1-release.1](https://github.com/tbvgl/wappler-resend/compare/v1.0.0...v1.0.1-release.1) (2024-01-20)
 
 
