@@ -1,3 +1,10 @@
+# [1.0.0-release.2](https://github.com/tbvgl/wappler-resend/compare/v1.0.0-release.1...v1.0.0-release.2) (2024-01-20)
+
+
+### Bug Fixes
+
+* reply to is not working ([d60b076](https://github.com/tbvgl/wappler-resend/commit/d60b0768d00a36ce61a2493b4cc12e0046eacbcc))
+
 # 1.0.0-release.1 (2024-01-19)
 
 
