@@ -3,15 +3,9 @@ const fs = require("fs").promises;
 const { toSystemPath } = require("../../../lib/core/path");
 
 exports.send_resend_email = async function (options) {
+  options = this.parse(options);
   const apiKey = process.env.RESEND_API_KEY;
   const defaultFromEmail = process.env.EMAIL_FROM;
-  const recipients = options.to.split(",").map((email) => email.trim());
-  const ccRecipients = options.cc
-    ? options.cc.split(",").map((email) => email.trim())
-    : [];
-  const bccRecipients = options.bcc
-    ? options.bcc.split(",").map((email) => email.trim())
-    : [];
 
   if (!apiKey) {
     throw new Error("Resend API key is not set in environment variables.");
@@ -28,6 +22,9 @@ exports.send_resend_email = async function (options) {
   }
   const fromName = options.fromName ? options.fromName.trim() : "";
   const formattedFrom = fromName ? `${fromName} <${fromEmail}>` : fromEmail;
+  const recipients = this.parseOptional(options.to, "string", "").split(",").map(email => email.trim());
+  const ccRecipients = this.parseOptional(options.cc, "string", "").split(",").map(email => email.trim());
+  const bccRecipients = this.parseOptional(options.bcc, "string", "").split(",").map(email => email.trim());
 
   const preheaderHtml = options.preheader
     ? `<span style="display: none; font-size: 1px; color: #ffffff;">${options.preheader}</span>`
@@ -55,6 +52,8 @@ exports.send_resend_email = async function (options) {
   const emailData = {
     from: formattedFrom,
     to: recipients,
+    cc: ccRecipients.length > 0 ? ccRecipients : undefined,
+    bcc: bccRecipients.length > 0 ? bccRecipients : undefined,
     subject: this.parseRequired(
       options.subject,
       "string",
@@ -65,9 +64,7 @@ exports.send_resend_email = async function (options) {
       "string",
       "HTML content is required."
     ),
-    reply_to: replyTo,
-    cc: ccRecipients.length > 0 ? ccRecipients : undefined,
-    bcc: bccRecipients.length > 0 ? bccRecipients : undefined,
+    replyTo: replyTo,
     text: options.text,
     tags: tags,
     attachments: await Promise.all(attachments),
