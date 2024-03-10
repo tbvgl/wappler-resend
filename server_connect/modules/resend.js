@@ -70,8 +70,6 @@ exports.send_resend_email = async function (options) {
     attachments: await Promise.all(attachments),
   };
 
-  console.log("Email Data:", emailData);
-
   try {
     const response = await resend.emails.send(emailData);
 
