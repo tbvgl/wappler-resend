@@ -1,9 +1,17 @@
+
 ## [1.0.3-release.2](https://github.com/tbvgl/wappler-resend/compare/v1.0.3-release.1...v1.0.3-release.2) (2024-03-10)
+=======
+## [1.0.3](https://github.com/tbvgl/wappler-resend/compare/v1.0.2...v1.0.3) (2024-01-31)
+
 
 
 ### Bug Fixes
 
+
 * remove console log for email data which was meant for debugging only ([dc34331](https://github.com/tbvgl/wappler-resend/commit/dc34331b5bbe4912b545c9419e1457ef6b70a6dd))
+=======
+* dynamic data not being parsed corretly ([324db5f](https://github.com/tbvgl/wappler-resend/commit/324db5f6ba95160f4ecc42628e66dfdac29af364))
+
 
 ## [1.0.3-release.1](https://github.com/tbvgl/wappler-resend/compare/v1.0.2...v1.0.3-release.1) (2024-01-31)
 
