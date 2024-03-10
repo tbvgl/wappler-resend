@@ -1,3 +1,9 @@
+## [1.0.4](https://github.com/tbvgl/wappler-resend/compare/v1.0.3...v1.0.4) (2024-03-10)
+
+
+### Bug Fixes
+
+* remove console log for email data which was meant for debugging only ([dc34331](https://github.com/tbvgl/wappler-resend/commit/dc34331b5bbe4912b545c9419e1457ef6b70a6dd))
 
 ## [1.0.3-release.2](https://github.com/tbvgl/wappler-resend/compare/v1.0.3-release.1...v1.0.3-release.2) (2024-03-10)
 =======
